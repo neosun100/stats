@@ -77,13 +77,15 @@ public class MemoryWidget: WidgetWrapper {
         
         let font = NSFont.systemFont(ofSize: 9, weight: .light)
         let compact = Constants.Widget.compact
-        // Compact widgets: letters and values hug each other instead of sitting in fixed 8 pt / 50 pt boxes
+        // Compact widgets: letters hug the values instead of sitting in a fixed 8 pt slot + 4 pt gap
         let letterWidth: CGFloat = compact
             ? max(Constants.Widget.stableWidth("F:", font: font), Constants.Widget.stableWidth("U:", font: font))
             : 8
         let rowHeight: CGFloat = self.frame.height / 2
+        // reserve "888.88 GB" (widest ByteCountFormatter output below 1 TB) so the column keeps its width
         var width: CGFloat = compact
-            ? max(Constants.Widget.stableWidth(value.0, font: font), Constants.Widget.stableWidth(value.1, font: font))
+            ? max(Constants.Widget.stableWidth("888.88 GB", font: font),
+                  Constants.Widget.stableWidth(value.0, font: font), Constants.Widget.stableWidth(value.1, font: font))
             : self.width
         var x: CGFloat = 0
         

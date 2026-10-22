@@ -31,9 +31,10 @@ public class Mini: WidgetWrapper {
         (self.labelState ? 31 : 36) + (2*Constants.Widget.margin.x)
     }
 
-    /// Compact widgets: room for two digits; widens only while the value itself needs more (e.g. "100%").
+    /// Compact widgets: room for three digits ("100%", "120W") so the widget never resizes as the value changes,
+    /// without the centering slack and padding of the fixed box.
     private func compactWidth(value: String, suffix: String, label: String, valueFont: NSFont, labelFont: NSFont) -> CGFloat {
-        let reserved = Constants.Widget.stableWidth("88\(suffix)", font: valueFont)
+        let reserved = Constants.Widget.stableWidth("888\(suffix)", font: valueFont)
         let current = Constants.Widget.stableWidth(value, font: valueFont)
         let labelWidth = self.labelState ? ceil((label as NSString).size(withAttributes: [.font: labelFont]).width) : 0
         return min(self.width, max(reserved, current, labelWidth) + (2*Constants.Widget.margin.x))

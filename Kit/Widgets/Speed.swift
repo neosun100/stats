@@ -240,10 +240,21 @@ public class SpeedWidget: WidgetWrapper {
         return width
     }
     
+    /// Compact widgets: the widest value this format can produce (auto unit: "888 KB/s", "88.8 MB/s", "888 MB/s",
+    /// "8.8 GB/s"; fixed unit: three significant digits), so the column keeps its width as traffic changes.
+    private func reservedValueWidth(font: NSFont) -> CGFloat {
+        let b = self.base == .byte ? "B" : "b"
+        let samples = self.unitsState
+            ? ["888 K\(b)/s", "88.8 M\(b)/s", "888 M\(b)/s", "8.8 G\(b)/s", "8.88 M\(b)/s", "8.88 G\(b)/s"]
+            : ["888", "88.8", "8.88"]
+        return samples.map { Constants.Widget.stableWidth($0, font: font) }.max() ?? 0
+    }
+    
     private func drawValue(_ value: Int64, offset: CGPoint, color: NSColor) -> CGFloat {
         let text = Units(bytes: value).getReadableSpeed(base: base, unit: self.speedUnit, omitUnits: !self.unitsState)
         let rowWidth: CGFloat = Constants.Widget.compact
-            ? Constants.Widget.stableWidth(text, font: NSFont.systemFont(ofSize: 11, weight: .regular)) + (Constants.Widget.margin.x*2)
+            ? max(self.reservedValueWidth(font: NSFont.systemFont(ofSize: 11, weight: .regular)),
+                  Constants.Widget.stableWidth(text, font: NSFont.systemFont(ofSize: 11, weight: .regular))) + (Constants.Widget.margin.x*2)
             : (self.unitsState ? 58 : 32)
         let height: CGFloat = self.frame.height
         let style = NSMutableParagraphStyle()
@@ -348,9 +359,11 @@ public class SpeedWidget: WidgetWrapper {
             let font = NSFont.systemFont(ofSize: 9, weight: .light)
             let inputString = Units(bytes: self.inputValue).getReadableSpeed(base: base, unit: self.speedUnit, omitUnits: !self.unitsState)
             let outputString = Units(bytes: self.outputValue).getReadableSpeed(base: base, unit: self.speedUnit, omitUnits: !self.unitsState)
-            // Compact widgets: the column is as wide as its longest value instead of a fixed 48 pt / 30 pt
+            // Compact widgets: the column is as wide as the widest value the format can produce instead of a fixed 48 pt / 30 pt
             let rowWidth: CGFloat = Constants.Widget.compact
-                ? max(Constants.Widget.stableWidth(inputString, font: font), Constants.Widget.stableWidth(outputString, font: font)) + (Constants.Widget.margin.x*2)
+                ? max(self.reservedValueWidth(font: font),
+                      Constants.Widget.stableWidth(inputString, font: font),
+                      Constants.Widget.stableWidth(outputString, font: font)) + (Constants.Widget.margin.x*2)
                 : (self.unitsState ? 48 : 30)
             let rowHeight: CGFloat = self.frame.height / 2
             let style = NSMutableParagraphStyle()
