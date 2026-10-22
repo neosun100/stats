@@ -33,10 +33,10 @@ public class Mini: WidgetWrapper {
 
     /// Compact widgets: room for two digits; widens only while the value itself needs more (e.g. "100%").
     private func compactWidth(value: String, suffix: String, label: String, valueFont: NSFont, labelFont: NSFont) -> CGFloat {
-        let reserved = ("88\(suffix)" as NSString).size(withAttributes: [.font: valueFont]).width
-        let current = (value as NSString).size(withAttributes: [.font: valueFont]).width
-        let labelWidth = self.labelState ? (label as NSString).size(withAttributes: [.font: labelFont]).width : 0
-        return min(self.width, ceil(max(reserved, current, labelWidth)) + (2*Constants.Widget.margin.x))
+        let reserved = Constants.Widget.stableWidth("88\(suffix)", font: valueFont)
+        let current = Constants.Widget.stableWidth(value, font: valueFont)
+        let labelWidth = self.labelState ? ceil((label as NSString).size(withAttributes: [.font: labelFont]).width) : 0
+        return min(self.width, max(reserved, current, labelWidth) + (2*Constants.Widget.margin.x))
     }
     
     private var alignment: NSTextAlignment {

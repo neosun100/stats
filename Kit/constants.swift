@@ -51,6 +51,12 @@ public struct Widget_c_s {
     public var moduleSpacing: CGFloat {
         self.compact ? 0 : self.spacing
     }
+    /// Width of `text` with every digit drawn as "8": it changes only with the digit count or the unit,
+    /// so a widget sized by it hugs its value without shifting the menu bar on every refresh.
+    public func stableWidth(_ text: String, font: NSFont) -> CGFloat {
+        let digitsAsEight = String(text.map { $0.isNumber ? "8" : $0 })
+        return ceil((digitsAsEight as NSString).size(withAttributes: [.font: font]).width)
+    }
 }
 
 public struct Constants {

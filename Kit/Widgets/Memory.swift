@@ -75,9 +75,16 @@ public class MemoryWidget: WidgetWrapper {
             pressureLevel = self.pressureLevel
         }
         
-        let letterWidth: CGFloat = 8
+        let font = NSFont.systemFont(ofSize: 9, weight: .light)
+        let compact = Constants.Widget.compact
+        // Compact widgets: letters and values hug each other instead of sitting in fixed 8 pt / 50 pt boxes
+        let letterWidth: CGFloat = compact
+            ? max(Constants.Widget.stableWidth("F:", font: font), Constants.Widget.stableWidth("U:", font: font))
+            : 8
         let rowHeight: CGFloat = self.frame.height / 2
-        var width: CGFloat = self.width
+        var width: CGFloat = compact
+            ? max(Constants.Widget.stableWidth(value.0, font: font), Constants.Widget.stableWidth(value.1, font: font))
+            : self.width
         var x: CGFloat = 0
         
         let freeY: CGFloat = !self.orderReversedState ? rowHeight+1 : 1
@@ -86,7 +93,7 @@ public class MemoryWidget: WidgetWrapper {
         let style = NSMutableParagraphStyle()
         style.alignment = .right
         var attributes = [
-            NSAttributedString.Key.font: NSFont.systemFont(ofSize: 9, weight: .light),
+            NSAttributedString.Key.font: font,
             NSAttributedString.Key.foregroundColor: NSColor.textColor,
             NSAttributedString.Key.paragraphStyle: style
         ]
@@ -100,7 +107,7 @@ public class MemoryWidget: WidgetWrapper {
             str = NSAttributedString.init(string: "U:", attributes: attributes)
             str.draw(with: rect)
             
-            x = letterWidth + Constants.Widget.spacing*2
+            x = letterWidth + (compact ? 1 : Constants.Widget.spacing*2)
             width += x
         }
         
