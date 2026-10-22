@@ -327,19 +327,24 @@ public class BatteryWidget: WidgetWrapper {
             
             if innerPercentage {
                 let value = "\(Int((percentage.rounded(toPlaces: 2)) * 100))"
-                // three digits do not fit the narrow body at the two-digit size
-                let fontSize: CGFloat = value.count > 2 ? (self.xlSizeState ? 6.5 : 5.5) : (self.xlSizeState ? 8 : 7)
                 let style = NSMutableParagraphStyle()
                 style.alignment = .center
-                let str = NSAttributedString(string: value, attributes: [
-                    .font: NSFont.systemFont(ofSize: fontSize, weight: .bold),
-                    .foregroundColor: NSColor.clear,
-                    .paragraphStyle: style
-                ])
+                // shrink until the number fits the narrow body ("100" needs a smaller size than "72")
+                var fontSize: CGFloat = self.xlSizeState ? 8 : 7
+                var str: NSAttributedString
+                repeat {
+                    str = NSAttributedString(string: value, attributes: [
+                        .font: NSFont.systemFont(ofSize: fontSize, weight: .bold),
+                        .foregroundColor: NSColor.clear,
+                        .paragraphStyle: style
+                    ])
+                    if str.size().width <= innerRect.width || fontSize <= 4 { break }
+                    fontSize -= 0.5
+                } while true
                 let textHeight = str.size().height
                 ctx.saveGState()
                 ctx.setBlendMode(.destinationIn)
-                str.draw(with: CGRect(x: innerRect.minX - 2, y: center.y - textHeight/2 + 1, width: innerRect.width + 4, height: textHeight))
+                str.draw(with: CGRect(x: innerRect.minX, y: center.y - textHeight/2 + 1, width: innerRect.width, height: textHeight))
                 ctx.restoreGState()
             }
         } else {
@@ -351,9 +356,15 @@ public class BatteryWidget: WidgetWrapper {
         }
         
         if ACStatus && self.chargerIconInside {
-            self.drawACIcon(ctx: ctx, center: center, height: bodySize.height - 8, charging: charging)
+            // the glyphs are drawn for the 30 pt horizontal body; scale them into the narrow one
+            ctx.saveGState()
+            ctx.translateBy(x: center.x, y: center.y)
+            ctx.scaleBy(x: 0.75, y: 0.75)
+            ctx.translateBy(x: -center.x, y: -center.y)
+            self.drawACIcon(ctx: ctx, center: center, height: bodySize.height - 6, charging: charging)
+            ctx.restoreGState()
         }
-        
+
         return width
     }
     
