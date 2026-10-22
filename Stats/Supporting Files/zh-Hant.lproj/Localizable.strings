@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "顯示圖示而非小工具";
 "Combined details" = "合併詳細資訊";
 "Spacing" = "間距";
+"Compact widgets" = "緊湊元件";
 "Choose file" = "選擇檔案";
 "Stress tests" = "壓力測試";
 "Keep the menubar items position" = "保持選單列項目的位置"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "電池充飽後隱藏其他資訊";
 "Percentage inside the icon" = "在圖示內顯示百分比";
 "Charger state inside the battery" = "在電池圖示中顯示充電狀態";
+"Vertical" = "直向";
 "Max capacity" = "最大容量"; // gemma4:31b
 "Designed capacity" = "設計容量"; // gemma4:31b
 "On hold" = "暫停"; // gemma4:31b

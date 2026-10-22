@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "विजेट के बजाय आइकन दिखाएँ";
 "Combined details" = "संयुक्त विवरण"; // translategemma:4b
 "Spacing" = "स्पेसिंग";
+"Compact widgets" = "Compact widgets";
 "Choose file" = "फ़ाइल चुनें"; // translategemma:4b
 "Stress tests" = "तनाव परीक्षण"; // translategemma:4b
 "Keep the menubar items position" = "मेनबार आइटमों की स्थिति बनाए रखें"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "पूर्ण होने पर अतिरिक्त जानकारी छिपाएं";
 "Percentage inside the icon" = "आइकन के अंदर प्रतिशत";
 "Charger state inside the battery" = "बैटरी के अंदर चार्जर की स्थिति"; // translategemma:4b
+"Vertical" = "Vertical";
 "Max capacity" = "अधिकतम क्षमता"; // gemma4:31b
 "Designed capacity" = "डिज़ाइन की गई क्षमता"; // gemma4:31b
 "On hold" = "रोका गया"; // gemma4:31b

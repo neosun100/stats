@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "Widget’lar yerine simge göster";
 "Combined details" = "Birleşik ayrıntılar";
 "Spacing" = "Aralık";
+"Compact widgets" = "Compact widgets";
 "Choose file" = "Dosya seç";
 "Stress tests" = "Stres testleri";
 "Keep the menubar items position" = "Menü çubuğu öğelerinin konumunu koru"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "Pil tamamen dolduğunda ek bilgileri gizle";
 "Percentage inside the icon" = "Yüzdeyi simgenin içinde göster";
 "Charger state inside the battery" = "Şarj durumunu pil simgesinin içinde göster";
+"Vertical" = "Vertical";
 "Max capacity" = "Maksimum kapasite"; // gemma4:31b
 "Designed capacity" = "Tasarım kapasitesi"; // gemma4:31b
 "On hold" = "Beklemede"; // gemma4:31b

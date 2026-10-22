@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "Prikaži ikonu umjesto widgeta";
 "Combined details" = "Kombinirani detalji"; // gemma4:31b
 "Spacing" = "Razmak"; // translategemma:4b
+"Compact widgets" = "Compact widgets";
 "Choose file" = "Odaberi datoteku"; // gemma4:31b
 "Stress tests" = "Stres-testovi"; // gemma4:31b
 "Keep the menubar items position" = "Zadrži poziciju stavki trake izbornika"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "Sakrij dodatne podatke kad je napunjena";
 "Percentage inside the icon" = "Postotak unutar ikone"; // translategemma:4b
 "Charger state inside the battery" = "Stanje punjenja unutar baterije"; // translategemma:4b
+"Vertical" = "Vertical";
 "Max capacity" = "Maksimalni kapacitet"; // gemma4:31b
 "Designed capacity" = "Projektirani kapacitet"; // gemma4:31b
 "On hold" = "Na čekanju"; // gemma4:31b

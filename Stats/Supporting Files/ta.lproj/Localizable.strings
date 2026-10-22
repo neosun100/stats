@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "விட்ஜெட்டுகளுக்குப் பதிலாக ஐகானைக் காட்டு";
 "Combined details" = "ஒன்றிணைக்கப்பட்ட விவரங்கள்";
 "Spacing" = "விடைவெளி";
+"Compact widgets" = "Compact widgets";
 "Choose file" = "கோப்பைத் தேர்ந்தெடு";
 "Stress tests" = "சுமை சோதனைகள்";
 "Keep the menubar items position" = "மெனுவார் பொருட்களின் நிலையை வைத்திருக்க"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "முழு நிரம்பியிருக்கும்போது கூடுதல் தகவலை மறை";
 "Percentage inside the icon" = "சின்னத்திற்குள் சதவீதம்";
 "Charger state inside the battery" = "மின்கலத்திற்குள் சார்ஜர் நிலை";
+"Vertical" = "Vertical";
 "Max capacity" = "அதிகபட்ச கொள்ளளவு";
 "Designed capacity" = "வடிவமைக்கப்பட்ட கொள்ளளவு";
 "On hold" = "நிறுத்தப்பட்டது";

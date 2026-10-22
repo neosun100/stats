@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "Εμφάνιση εικονιδίου αντί για widgets";
 "Combined details" = "Συνδυασμένες λεπτομέρειες"; // gemma4:31b
 "Spacing" = "Κενό";
+"Compact widgets" = "Compact widgets";
 "Choose file" = "Επιλογή αρχείου"; // gemma4:31b
 "Stress tests" = "Δοκιμές καταπόνησης"; // gemma4:31b
 "Keep the menubar items position" = "Διατήρηση της θέσης των στοιχείων της μπάρας μενού"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "Απόκρυψη επιπρόσθετων πληροφοριών όταν γεμίσει";
 "Percentage inside the icon" = "Ποσοστό μέσα στο εικονίδιο";
 "Charger state inside the battery" = "Κατάσταση φόρτισης εντός της μπαταρίας"; // gemma4:31b
+"Vertical" = "Vertical";
 "Max capacity" = "Μέγιστη χωρητικότητα"; // gemma4:31b
 "Designed capacity" = "Σχεδιασμένη χωρητικότητα"; // gemma4:31b
 "On hold" = "Σε αναμονή"; // gemma4:31b

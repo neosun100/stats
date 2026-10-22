@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "Toon pictogram in plaats van widgets";
 "Combined details" = "Gecombineerde details";
 "Spacing" = "Afstand"; // gemma4:31b
+"Compact widgets" = "Compact widgets";
 "Choose file" = "Kies bestand"; // translategemma:4b
 "Stress tests" = "Stresstests"; // gemma4:26b
 "Keep the menubar items position" = "Behoud de positie van de menubalk-items"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "Verberg aanvullende informatie wanneer batterij vol is";
 "Percentage inside the icon" = "Percentage binnen het icoon"; // translategemma:4b
 "Charger state inside the battery" = "Status van de oplaadunit binnenin de batterij"; // translategemma:4b
+"Vertical" = "Vertical";
 "Max capacity" = "Maximale capaciteit"; // qwen3.8:27b
 "Designed capacity" = "Ontworpen capaciteit"; // qwen3.8:27b
 "On hold" = "In afwachting"; // qwen3.8:27b

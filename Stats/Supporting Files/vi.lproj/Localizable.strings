@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "Hiển thị biểu tượng thay cho tiện ích";
 "Combined details" = "Chi tiết kết hợp";
 "Spacing" = "Khoảng cách";
+"Compact widgets" = "Compact widgets";
 "Choose file" = "Chọn tập tin";
 "Stress tests" = "Kiểm tra áp lực";
 "Keep the menubar items position" = "Giữ vị trí các mục thanh menu"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "Ẩn thông tin bổ sung khi pin đầy";
 "Percentage inside the icon" = "Phần trăm hiển thị trong biểu tượng";
 "Charger state inside the battery" = "Trạng thái sạc bên trong pin";
+"Vertical" = "Vertical";
 "Max capacity" = "Dung lượng tối đa"; // gemma4:31b
 "Designed capacity" = "Dung lượng thiết kế"; // gemma4:31b
 "On hold" = "Tạm dừng"; // gemma4:31b

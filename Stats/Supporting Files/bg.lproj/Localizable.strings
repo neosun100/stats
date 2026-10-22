@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "Показване на икона вместо уиджети";
 "Combined details" = "Комбинирани подробности"; // gemma4:31b
 "Spacing" = "Интервал"; // gemma4:31b
+"Compact widgets" = "Compact widgets";
 "Choose file" = "Изберете файл"; // translategemma:4b
 "Stress tests" = "Стрес тестове"; // gemma4:31b
 "Keep the menubar items position" = "Запази позицията на елементите на лентата на менюто"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "Скриване на допълнителна информация при пълен заряд";
 "Percentage inside the icon" = "Процент в иконата";
 "Charger state inside the battery" = "Състояние на зареждането вътре в батерията"; // translategemma:4b
+"Vertical" = "Vertical";
 "Max capacity" = "Максимален капацитет"; // gemma4:31b
 "Designed capacity" = "Проектиран капацитет"; // gemma4:31b
 "On hold" = "В изчакване"; // gemma4:31b

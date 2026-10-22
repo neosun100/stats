@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "نمایش نماد به‌جای ابزارک‌ها";
 "Combined details" = "جزئیات ترکیبی"; // translategemma:4b
 "Spacing" = "فاصله"; // translategemma:4b
+"Compact widgets" = "Compact widgets";
 "Choose file" = "انتخاب فایل"; // gemma4:31b
 "Stress tests" = "تست‌های استرس"; // gemma4:31b
 "Keep the menubar items position" = "حفظ جایگاه عناصر نوار منو"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "پنهان کردن اطلاعات اضافه موقع شارژ کامل";
 "Percentage inside the icon" = "درصد داخل آیکون";
 "Charger state inside the battery" = "وضعیت شارژ در داخل باتری"; // translategemma:4b
+"Vertical" = "Vertical";
 "Max capacity" = "حداکثر ظرفیت"; // gemma4:31b
 "Designed capacity" = "ظرفیت طراحی شده"; // gemma4:31b
 "On hold" = "در انتظار"; // gemma4:31b

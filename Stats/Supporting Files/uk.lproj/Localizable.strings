@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "Показувати іконку замість віджетів";
 "Combined details" = "Комбіновані деталі";
 "Spacing" = "Інтервал";
+"Compact widgets" = "Compact widgets";
 "Choose file" = "Виберіть файл";
 "Stress tests" = "Стрес-тести";
 "Keep the menubar items position" = "Зберігати розташування елементів панелі меню"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "Приховати додаткову інформацію, якщо акумулятор заряджений";
 "Percentage inside the icon" = "Відсоток всередині іконки";
 "Charger state inside the battery" = "Стан зарядки всередині акумулятора";
+"Vertical" = "Vertical";
 "Max capacity" = "Максимальна ємність"; // qwen3.8:27b
 "Designed capacity" = "Проектна ємність"; // qwen3.8:27b
 "On hold" = "На паузі"; // qwen3.8:27b

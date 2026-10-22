@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "Mostra la icona en lloc dels ginys";
 "Combined details" = "Detalls combinats";
 "Spacing" = "Espaiat";
+"Compact widgets" = "Compact widgets";
 "Choose file" = "Tria el fitxer"; // gemma4:31b
 "Stress tests" = "Proves d'estress"; // gemma4:31b
 "Keep the menubar items position" = "Mantenir la posició dels elements de la barra de menús"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "Oculta informació addicional quan la bateria estigui carregada";
 "Percentage inside the icon" = "Percentatge dins de la icona";
 "Charger state inside the battery" = "Estat de càrrega dins de la bateria"; // gemma4:31b
+"Vertical" = "Vertical";
 "Max capacity" = "Capacitat màxima"; // gemma4:31b
 "Designed capacity" = "Capacitat dissenyada"; // gemma4:31b
 "On hold" = "En espera"; // gemma4:31b

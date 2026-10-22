@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "Ikon megjelenítése widgetek helyett";
 "Combined details" = "Kombinált részletek"; // gemma4:31b
 "Spacing" = "Helyköz";
+"Compact widgets" = "Compact widgets";
 "Choose file" = "Fájl választása"; // gemma4:31b
 "Stress tests" = "Terhelési tesztek"; // gemma4:31b
 "Keep the menubar items position" = "Menüsáv-elemek pozíciójának megtartása"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "További információk elrejtése, ha teljesen fel van töltve";
 "Percentage inside the icon" = "Százalék megjelenítése az ikonban";
 "Charger state inside the battery" = "Töltési állapot az akkumulátoron belül"; // gemma4:31b
+"Vertical" = "Vertical";
 "Max capacity" = "Maximális kapacitás"; // gemma4:31b
 "Designed capacity" = "Tervezett kapacitás"; // gemma4:31b
 "On hold" = "Várakozásban"; // gemma4:31b

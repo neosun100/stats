@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "Pokaż ikonę zamiast widżetów";
 "Combined details" = "Złączone szczegóły";
 "Spacing" = "Rozstaw";
+"Compact widgets" = "Compact widgets";
 "Choose file" = "Wybrać plik";
 "Stress tests" = "Testy obciążeniowe";
 "Keep the menubar items position" = "Zachowuj pozycję elementów paska menu";
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "Ukryj dodatkowe informacje, gdy bateria jest naładowana";
 "Percentage inside the icon" = "Procent wewnątrz ikony";
 "Charger state inside the battery" = "Stan ładowania wewnątrz akumulatora";
+"Vertical" = "Vertical";
 "Max capacity" = "Maksymalna pojemność";
 "Designed capacity" = "Zaprojektowana pojemność";
 "On hold" = "Wstrzymane";

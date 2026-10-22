@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "Показывать значок вместо виджетов";
 "Combined details" = "Комбинированные детали";
 "Spacing" = "Интервал";
+"Compact widgets" = "Compact widgets";
 "Choose file" = "Выбрать файл";
 "Stress tests" = "Стресс-тесты";
 "Keep the menubar items position" = "Сохранять расположение элементов строки меню"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "Скрыть дополнительную информацию при полном заряде";
 "Percentage inside the icon" = "Процент внутри иконки";
 "Charger state inside the battery" = "Состояние зарядки внутри аккумулятора";
+"Vertical" = "Vertical";
 "Max capacity" = "Максимальная ёмкость"; // qwen3.8:27b
 "Designed capacity" = "Проектная ёмкость"; // qwen3.8:27b
 "On hold" = "Приостановлено"; // qwen3.8:27b

@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "إظهار الأيقونة بدلاً من عناصر الواجهة";
 "Combined details" = "تفاصيل مجمعة"; // translategemma:4b
 "Spacing" = "التباعد";
+"Compact widgets" = "Compact widgets";
 "Choose file" = "اختيار ملف"; // gemma4:31b
 "Stress tests" = "اختبارات الإجهاد"; // gemma4:31b
 "Keep the menubar items position" = "الحفاظ على موضع عناصر شريط القائمة"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "إخفاء المعلومات الإضافية عندما تكون ممتلئة";
 "Percentage inside the icon" = "النسبة المئوية داخل الرمز";
 "Charger state inside the battery" = "حالة الشحن داخل البطارية"; // gemma4:31b
+"Vertical" = "Vertical";
 "Max capacity" = "السعة القصوى"; // gemma4:31b
 "Designed capacity" = "السعة التصميمية"; // gemma4:31b
 "On hold" = "في الانتظار"; // gemma4:31b

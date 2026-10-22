@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "Näytä kuvake widgettien sijaan";
 "Combined details" = "Yhdistetyt tiedot";
 "Spacing" = "Välistys"; // gemma4:31b
+"Compact widgets" = "Compact widgets";
 "Choose file" = "Valitse tiedosto"; // translategemma:4b
 "Stress tests" = "Stressitestit"; // translategemma:4b
 "Keep the menubar items position" = "Säilytä valikkopalkin kohtien sijainti"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "Piilota lisätiedot, kun täynnä";
 "Percentage inside the icon" = "Prosentti kuvakkeen sisällä";
 "Charger state inside the battery" = "Lataustila akun sisällä"; // gemma4:31b
+"Vertical" = "Vertical";
 "Max capacity" = "Maksimikapasiteetti"; // gemma4:31b
 "Designed capacity" = "Suunniteltu kapasiteetti"; // gemma4:31b
 "On hold" = "Odotuksessa"; // gemma4:31b

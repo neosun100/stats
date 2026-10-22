@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "ウィジェットの代わりにアイコンを表示";
 "Combined details" = "統合された詳細"; // translategemma:4b
 "Spacing" = "間隔"; // translategemma:4b
+"Compact widgets" = "Compact widgets";
 "Choose file" = "ファイルを選択"; // gemma4:31b
 "Stress tests" = "ストレステスト"; // translategemma:4b
 "Keep the menubar items position" = "メニューバー項目の位置を保持する"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "フル充電済みのときはアイコンのみ表示";
 "Percentage inside the icon" = "アイコン内のパーセンテージ"; // translategemma:4b
 "Charger state inside the battery" = "バッテリー内部の充電状態"; // translategemma:4b
+"Vertical" = "Vertical";
 "Max capacity" = "最大容量"; // gemma4:31b
 "Designed capacity" = "設計容量"; // gemma4:31b
 "On hold" = "保留中"; // gemma4:31b

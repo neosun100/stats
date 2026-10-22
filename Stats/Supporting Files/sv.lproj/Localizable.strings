@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "Visa ikon istället för widgetar";
 "Combined details" = "Kombinerade detaljer";
 "Spacing" = "Mellanrum";
+"Compact widgets" = "Compact widgets";
 "Choose file" = "Välj fil"; // translategemma:4b
 "Stress tests" = "Stresstester"; // gemma4:31b
 "Keep the menubar items position" = "Behåll positionen på elementen i menylisten"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "Dölj extra information när fulladdad";
 "Percentage inside the icon" = "Procent inuti ikonen";
 "Charger state inside the battery" = "Laddningsstatus inuti batteriet"; // translategemma:4b
+"Vertical" = "Vertical";
 "Max capacity" = "Maximal kapacitet"; // gemma4:31b
 "Designed capacity" = "Designad kapacitet"; // gemma4:31b
 "On hold" = "Väntande"; // gemma4:31b

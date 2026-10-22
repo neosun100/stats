@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "Zobraziť ikonu namiesto widgetov";
 "Combined details" = "Kombinované detaily"; // gemma4:31b
 "Spacing" = "Rozostup"; // translategemma:4b
+"Compact widgets" = "Compact widgets";
 "Choose file" = "Vybrať súbor"; // gemma4:31b
 "Stress tests" = "Stresové testy"; // gemma4:31b
 "Keep the menubar items position" = "Udržiavať polohu položiek lišty menu"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "Skryť ďalšie informácie, keď je plne nabitá";
 "Percentage inside the icon" = "Percentá vo vnútri ikony";
 "Charger state inside the battery" = "Stav nabíjačky vo vnútri batérie"; // translategemma:4b
+"Vertical" = "Vertical";
 "Max capacity" = "Maximálna kapacita"; // qwen3.8:27b
 "Designed capacity" = "Zaprojektovaná kapacita"; // qwen3.8:27b
 "On hold" = "Pozastavené"; // qwen3.8:27b

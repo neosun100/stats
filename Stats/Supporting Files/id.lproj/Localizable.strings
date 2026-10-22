@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "Tampilkan ikon sebagai pengganti widget";
 "Combined details" = "Detail gabungan"; // gemma4:31b
 "Spacing" = "Jarak"; // translategemma:4b
+"Compact widgets" = "Compact widgets";
 "Choose file" = "Pilih file"; // translategemma:4b
 "Stress tests" = "Uji stres"; // gemma4:31b
 "Keep the menubar items position" = "Pertahankan posisi item menubar"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "Sembunyikan informasi tambahan ketika penuh";
 "Percentage inside the icon" = "Persentase di dalam ikon"; // translategemma:4b
 "Charger state inside the battery" = "Status pengisian daya di dalam baterai"; // translategemma:4b
+"Vertical" = "Vertical";
 "Max capacity" = "Kapasitas maksimum"; // gemma4:31b
 "Designed capacity" = "Kapasitas desain"; // gemma4:31b
 "On hold" = "Ditangguhkan"; // gemma4:31b

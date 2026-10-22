@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "উইজেটের পরিবর্তে আইকন দেখান";
 "Combined details" = "সম্মিলিত বিবরণ";
 "Spacing" = "ব্যবধান";
+"Compact widgets" = "Compact widgets";
 "Choose file" = "ফাইল নির্বাচন করুন";
 "Stress tests" = "স্ট্রেস টেস্ট";
 "Keep the menubar items position" = "মেনুবার আইটেমগুলোর অবস্থান রক্ষা করুন"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "পূর্ণ হলে অতিরিক্ত তথ্য লুকিয়ে রাখুন"; // gemma4:31b
 "Percentage inside the icon" = "আইকনের ভেতরে শতাংশ"; // gemma4:31b
 "Charger state inside the battery" = "ব্যাটারির ভেতরে চার্জিং অবস্থা"; // gemma4:31b
+"Vertical" = "Vertical";
 "Max capacity" = "সর্বোচ্চ ধারণক্ষমতা"; // gemma4:31b
 "Designed capacity" = "নির্ধারিত ধারণক্ষমতা"; // gemma4:31b
 "On hold" = "স্থগিত"; // gemma4:31b

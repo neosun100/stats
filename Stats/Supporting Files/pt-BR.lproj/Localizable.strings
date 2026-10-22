@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "Mostrar ícone em vez de widgets";
 "Combined details" = "Combinar detalhes";
 "Spacing" = "Espaçamento";
+"Compact widgets" = "Compact widgets";
 "Choose file" = "Selecionar arquivo"; // gemma4:31b
 "Stress tests" = "Testes de estresse"; // translategemma:4b
 "Keep the menubar items position" = "Manter a posição dos itens da barra de menus"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "Ocultar informações adicionais quando estiver cheia";
 "Percentage inside the icon" = "Porcentagem dentro do ícone";
 "Charger state inside the battery" = "Estado de carregamento dentro da bateria"; // gemma4:31b
+"Vertical" = "Vertical";
 "Max capacity" = "Capacidade máxima"; // gemma4:31b
 "Designed capacity" = "Capacidade projetada"; // gemma4:31b
 "On hold" = "Em espera"; // gemma4:31b

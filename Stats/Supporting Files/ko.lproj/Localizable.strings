@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "위젯 대신 아이콘 표시";
 "Combined details" = "전체 세부 정보";
 "Spacing" = "간격";
+"Compact widgets" = "Compact widgets";
 "Choose file" = "파일 선택";
 "Stress tests" = "스트레스 테스트 진행하기";
 "Keep the menubar items position" = "메뉴바 항목 위치 유지"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "완전 충전 시 추가 정보 숨기기";
 "Percentage inside the icon" = "아이콘 속에 백분율";
 "Charger state inside the battery" = "배터리 내부의 충전 상태"; // gemma4:31b
+"Vertical" = "Vertical";
 "Max capacity" = "최대 용량"; // gemma4:31b
 "Designed capacity" = "설계 용량"; // gemma4:31b
 "On hold" = "대기 중"; // gemma4:31b

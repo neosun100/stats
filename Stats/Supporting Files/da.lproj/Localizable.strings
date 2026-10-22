@@ -169,6 +169,7 @@
 "Show icon instead of widgets" = "Vis ikon i stedet for widgets";
 "Combined details" = "Kombinerede detaljer"; // gemma4:31b
 "Spacing" = "Mellemrum";
+"Compact widgets" = "Compact widgets";
 "Choose file" = "Vælg fil"; // translategemma:4b
 "Stress tests" = "Stresstests"; // gemma4:31b
 "Keep the menubar items position" = "Bevar positionen på menubarens elementer"; // qwen3.8:27b
@@ -492,6 +493,7 @@
 "Hide additional information when full" = "Skjul yderligere information når fuldt opladt";
 "Percentage inside the icon" = "Procenttegn i ikonet";
 "Charger state inside the battery" = "Tilstand af opladningssystemet inde i batteriet"; // translategemma:4b
+"Vertical" = "Vertical";
 "Max capacity" = "Maksimal kapacitet"; // qwen3.8:27b
 "Designed capacity" = "Designet kapacitet"; // qwen3.8:27b
 "On hold" = "På vent"; // qwen3.8:27b
