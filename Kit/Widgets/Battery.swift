@@ -20,6 +20,7 @@ public class BatteryWidget: WidgetWrapper {
     private var hideAdditionalWhenFull: Bool = true
     private var xlSizeState: Bool = false
     private var chargerIconInside: Bool = true
+    private var verticalState: Bool = false
     
     private var _percentage: Double? = nil
     private var _time: Int = 0
@@ -47,6 +48,7 @@ public class BatteryWidget: WidgetWrapper {
             self.hideAdditionalWhenFull = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_hideAdditionalWhenFull", defaultValue: self.hideAdditionalWhenFull)
             self.xlSizeState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_xlSize", defaultValue: self.xlSizeState)
             self.chargerIconInside = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_chargerInside", defaultValue: self.chargerIconInside)
+            self.verticalState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_vertical", defaultValue: self.verticalState)
         }
         
         if preview {
@@ -128,6 +130,11 @@ public class BatteryWidget: WidgetWrapper {
                 x += rowWidth + Constants.Widget.spacing
             default: break
             }
+        }
+        
+        if self.verticalState {
+            self.setWidth(self.drawVertical(ctx: ctx, x: x, width: width, percentage: percentage, charging: charging, ACStatus: ACStatus))
+            return
         }
         
         let batterySize: CGSize = self.xlSizeState ? CGSize(width: 26, height: 14) : CGSize(width: 22, height: 12)
@@ -262,6 +269,92 @@ public class BatteryWidget: WidgetWrapper {
         }
         
         self.setWidth(width)
+    }
+    
+    /// Vertical battery: the same states as the horizontal one — fill = charge level, bolt = charging,
+    /// plug = on AC but not charging (full, or held by the charge limit), "?" = level unknown —
+    /// standing up to take ~12 pt instead of ~30 pt of menu bar width.
+    private func drawVertical(ctx: CGContext, x startX: CGFloat, width startWidth: CGFloat, percentage: Double?, charging: Bool, ACStatus: Bool) -> CGFloat {
+        var x = startX
+        var width = startWidth
+        let bodySize: CGSize = self.xlSizeState ? CGSize(width: 12, height: 18) : CGSize(width: 10, height: 16)
+        let nubSize: CGSize = CGSize(width: bodySize.width/2, height: 2)
+        let borderWidth: CGFloat = 1
+        let offset: CGFloat = 0.5
+        
+        if ACStatus && !self.chargerIconInside {
+            if x != 0 {
+                width += Constants.Widget.spacing
+                x += Constants.Widget.spacing
+            }
+            self.drawACIcon(ctx: ctx, center: CGPoint(x: x+3, y: self.frame.size.height/2), height: 12, charging: charging)
+            width += 6
+            x += 6 + Constants.Widget.spacing
+        }
+        if x != 0 {
+            width += Constants.Widget.spacing
+            x += Constants.Widget.spacing
+        }
+        
+        let bottom = (self.frame.size.height - bodySize.height - nubSize.height) / 2
+        let bodyRect = NSRect(x: x + offset, y: bottom + offset, width: bodySize.width - borderWidth, height: bodySize.height - borderWidth)
+        let body = NSBezierPath(roundedRect: bodyRect, xRadius: 2.5, yRadius: 2.5)
+        NSColor.textColor.withAlphaComponent(0.5).set()
+        body.lineWidth = borderWidth
+        body.stroke()
+        
+        let nub = NSBezierPath(roundedRect: NSRect(
+            x: bodyRect.midX - nubSize.width/2, y: bodyRect.maxY + offset, width: nubSize.width, height: nubSize.height
+        ), xRadius: 1, yRadius: 1)
+        nub.fill()
+        width += bodySize.width
+        
+        let center = CGPoint(x: bodyRect.midX, y: bodyRect.midY)
+        if let percentage {
+            let innerRect = bodyRect.insetBy(dx: 1.5, dy: 1.5)
+            let color = percentage.batteryColor(color: self.colorState)
+            let innerPercentage = self.additional == "innerPercentage" && (!ACStatus || !self.chargerIconInside)
+            
+            if innerPercentage {
+                (self.colorState ? color : NSColor.textColor).withAlphaComponent(0.5).set()
+                NSBezierPath(roundedRect: innerRect, xRadius: 1, yRadius: 1).fill()
+            }
+            // fills from the bottom up
+            let fill = NSRect(x: innerRect.minX, y: innerRect.minY, width: innerRect.width,
+                              height: max(1, innerRect.height * CGFloat(percentage)))
+            color.set()
+            NSBezierPath(roundedRect: fill, xRadius: 1, yRadius: 1).fill()
+            
+            if innerPercentage {
+                let value = "\(Int((percentage.rounded(toPlaces: 2)) * 100))"
+                // three digits do not fit the narrow body at the two-digit size
+                let fontSize: CGFloat = value.count > 2 ? (self.xlSizeState ? 6.5 : 5.5) : (self.xlSizeState ? 8 : 7)
+                let style = NSMutableParagraphStyle()
+                style.alignment = .center
+                let str = NSAttributedString(string: value, attributes: [
+                    .font: NSFont.systemFont(ofSize: fontSize, weight: .bold),
+                    .foregroundColor: NSColor.clear,
+                    .paragraphStyle: style
+                ])
+                let textHeight = str.size().height
+                ctx.saveGState()
+                ctx.setBlendMode(.destinationIn)
+                str.draw(with: CGRect(x: innerRect.minX - 2, y: center.y - textHeight/2 + 1, width: innerRect.width + 4, height: textHeight))
+                ctx.restoreGState()
+            }
+        } else {
+            let str = NSAttributedString(string: "?", attributes: [
+                .font: NSFont.systemFont(ofSize: 10, weight: .regular),
+                .foregroundColor: isDarkMode ? NSColor.white : NSColor.textColor
+            ])
+            str.draw(at: CGPoint(x: center.x - str.size().width/2, y: center.y - str.size().height/2))
+        }
+        
+        if ACStatus && self.chargerIconInside {
+            self.drawACIcon(ctx: ctx, center: center, height: bodySize.height - 8, charging: charging)
+        }
+        
+        return width
     }
     
     private func drawOneRow(value: String, x: CGFloat) -> CGFloat {
@@ -449,6 +542,10 @@ public class BatteryWidget: WidgetWrapper {
             PreferencesRow(localizedString("Charger state inside the battery"), component: switchView(
                 action: #selector(self.toggleChargerIconInside),
                 state: self.chargerIconInside
+            )),
+            PreferencesRow(localizedString("Vertical"), component: switchView(
+                action: #selector(self.toggleVertical),
+                state: self.verticalState
             ))
         ]))
         
@@ -483,6 +580,12 @@ public class BatteryWidget: WidgetWrapper {
     @objc private func toggleChargerIconInside(_ sender: NSControl) {
         self.chargerIconInside = controlState(sender)
         Store.shared.set(key: "\(self.title)_\(self.type.rawValue)_chargerInside", value: self.chargerIconInside)
+        self.display()
+    }
+    
+    @objc private func toggleVertical(_ sender: NSControl) {
+        self.verticalState = controlState(sender)
+        Store.shared.set(key: "\(self.title)_\(self.type.rawValue)_vertical", value: self.verticalState)
         self.display()
     }
 }
