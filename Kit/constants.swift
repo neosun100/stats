@@ -40,6 +40,17 @@ public struct Widget_c_s {
         get { CGPoint(x: 0, y: 2) }
     }
     public let spacing: CGFloat = 2
+
+    /// Combined modules with "Compact widgets" enabled: no padding around or between the widgets of a module,
+    /// and widgets that reserve room for their widest value (Mini: "100%") reserve two digits instead.
+    public var compact: Bool {
+        Store.shared.bool(key: "CombinedModules", defaultValue: false) &&
+        Store.shared.bool(key: "CombinedModules_compact", defaultValue: false)
+    }
+    /// Padding around and between the widgets of one module in the menu bar.
+    public var moduleSpacing: CGFloat {
+        self.compact ? 0 : self.spacing
+    }
 }
 
 public struct Constants {

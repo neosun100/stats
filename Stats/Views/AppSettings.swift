@@ -34,6 +34,10 @@ class ApplicationSettings: NSStackView {
         get { Store.shared.string(key: "CombinedModules_spacing", defaultValue: "none") }
         set { Store.shared.set(key: "CombinedModules_spacing", value: newValue) }
     }
+    private var combinedModulesCompact: Bool {
+        get { Store.shared.bool(key: "CombinedModules_compact", defaultValue: false) }
+        set { Store.shared.set(key: "CombinedModules_compact", value: newValue) }
+    }
     private var combinedModulesSeparator: Bool {
         get { Store.shared.bool(key: "CombinedModules_separator", defaultValue: false) }
         set { Store.shared.set(key: "CombinedModules_separator", value: newValue) }
@@ -144,6 +148,10 @@ class ApplicationSettings: NSStackView {
                 action: #selector(self.toggleCombinedModulesSpacing),
                 items: CombinedModulesSpacings,
                 selected: self.combinedModulesSpacing
+            )),
+            PreferencesRow(localizedString("Compact widgets"), component: switchView(
+                action: #selector(self.toggleCombinedModulesCompact),
+                state: self.combinedModulesCompact
             )),
             PreferencesRow(localizedString("Separator"), component: switchView(
                 action: #selector(self.toggleCombinedModulesSeparator),
@@ -385,7 +393,7 @@ class ApplicationSettings: NSStackView {
     
     private func updateCombinedModulesSettings() {
         self.combinedModulesView?.setRowVisibility(1, newState: self.combinedModulesState)
-        for row in 2...5 {
+        for row in 2...6 {
             self.combinedModulesView?.setRowVisibility(row, newState: self.combinedModulesState && !self.combinedModulesIcon)
         }
     }
@@ -393,6 +401,11 @@ class ApplicationSettings: NSStackView {
     @objc private func toggleCombinedModulesIcon(_ sender: NSButton) {
         self.combinedModulesIcon = sender.state == NSControl.StateValue.on
         self.updateCombinedModulesSettings()
+        NotificationCenter.default.post(name: .moduleRearrange, object: nil, userInfo: nil)
+    }
+    
+    @objc private func toggleCombinedModulesCompact(_ sender: NSButton) {
+        self.combinedModulesCompact = sender.state == NSControl.StateValue.on
         NotificationCenter.default.post(name: .moduleRearrange, object: nil, userInfo: nil)
     }
     

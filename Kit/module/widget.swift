@@ -428,11 +428,14 @@ public class MenuBar {
         
         NotificationCenter.default.addObserver(self, selector: #selector(listenForOneView), name: .toggleOneView, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(listenForWidgetRearrange), name: .widgetRearrange, object: nil)
+        // "Compact widgets" changes the padding of every module, also those whose widgets keep their width
+        NotificationCenter.default.addObserver(self, selector: #selector(listenForModuleRearrange), name: .moduleRearrange, object: nil)
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: .toggleOneView, object: nil)
         NotificationCenter.default.removeObserver(self, name: .widgetRearrange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .moduleRearrange, object: nil)
     }
     
     public func append(_ widget: SWidget) {
@@ -514,8 +517,8 @@ public class MenuBar {
         guard self.oneView, self.active else { return }
         
         let w = self.activeWidgets.isEmpty ? 0 : self.activeWidgets.map({ $0.item.frame.width }).reduce(0, +) +
-            (CGFloat(self.activeWidgets.count - 1) * Constants.Widget.spacing) +
-            Constants.Widget.spacing * 2
+            (CGFloat(self.activeWidgets.count - 1) * Constants.Widget.moduleSpacing) +
+            Constants.Widget.moduleSpacing * 2
         self.menuBarItem?.length = w
         self.view.setFrameOrigin(NSPoint(x: 0, y: 0))
         self.view.setFrameSize(NSSize(width: w, height: Constants.Widget.height))
@@ -562,6 +565,10 @@ public class MenuBar {
         }
     }
     
+    @objc private func listenForModuleRearrange(_ notification: Notification) {
+        DispatchQueue.main.async { self.recalculateWidth() }
+    }
+    
     @objc private func listenForWidgetRearrange(_ notification: Notification) {
         guard let name = notification.userInfo?["module"] as? String, name == self.moduleName else {
             return
@@ -590,11 +597,11 @@ public class MenuBarView: NSView {
     }
     
     public func recalculate(_ list: [widget_t] = []) {
-        var x: CGFloat = Constants.Widget.spacing
+        var x: CGFloat = Constants.Widget.moduleSpacing
         list.forEach { (type: widget_t) in
             if let view = self.subviews.first(where: { $0.identifier == NSUserInterfaceItemIdentifier(type.rawValue) }) {
                 view.setFrameOrigin(NSPoint(x: x, y: view.frame.origin.y))
-                x = view.frame.origin.x + view.frame.width + Constants.Widget.spacing
+                x = view.frame.origin.x + view.frame.width + Constants.Widget.moduleSpacing
             }
         }
     }
